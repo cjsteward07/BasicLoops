@@ -3,11 +3,14 @@
     string userContinue = string.Empty;
     do
     {
-    Console.WriteLine("Hello, World");
-    Console.WriteLine("Would you like to continue [y/n]?");
-    userContinue = Console.ReadLine().ToLower().Trim();
+        Console.WriteLine("Hello, World");
+        Console.WriteLine("Would you like to play again [y/n]?");
+        userContinue = Console.ReadLine().ToLower().Trim();
     }
     while (userContinue != "n");
+
+    Console.Clear();
+    Menu();
 }
 
 void ForLoops()
@@ -32,7 +35,7 @@ void ForLoops()
             Console.Write($"{i} ");
         }
 
-        Console.WriteLine("\n\nWould you like to continue [y/n]?");
+        Console.WriteLine("\n\nWould you like to play again [y/n]?");
         string playAgain = Console.ReadLine().ToLower().Trim();
         
         if(playAgain == "y")
@@ -43,8 +46,9 @@ void ForLoops()
         else
         {
             Console.Clear();
-            Console.WriteLine("Goodbye!");
+            // Console.WriteLine("Goodbye!");
             loop = 0;
+            Menu();
         }
     }
 }
@@ -64,24 +68,35 @@ void KeypadWhileLoop()
 
             if (userInput == CODE)
             {
-                Console.Clear();
-                Console.WriteLine($"Welcome. {userInput} is CORRECT!");
                 door = "unlocked";
+
+                Console.Clear();
+                Console.WriteLine($"Welcome. {userInput} is CORRECT!\n");
+                Console.WriteLine("Press enter to return to main menu");
+                Console.ReadKey();
+                Console.Clear();
+                break;
             }
             else if (userInput != CODE && numberOfAttempts > 0)
             {
-                Console.Clear();
                 numberOfAttempts = numberOfAttempts - 1;
+
+                Console.Clear();
                 Console.WriteLine($"{userInput} is incorrect. {numberOfAttempts} attempts remaining. Please try again");
             }
         }
         else
         {
             Console.Clear();
-            Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.");
-            Environment.Exit(0);
+            Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
+            Console.WriteLine("Press enter to return to main menu");
+            Console.ReadKey();
+            Console.Clear();
+            break;
         }
     }
+
+    Menu();
 }
 
 void KeypadDoWhileLoop()
@@ -99,30 +114,38 @@ void KeypadDoWhileLoop()
 
             if (userInput == CODE)
             {
-                Console.Clear();
-                Console.WriteLine($"Welcome. {userInput} is CORRECT!");
                 door = "unlocked";
+
+                Console.Clear();
+                Console.WriteLine($"Welcome. {userInput} is CORRECT!\n");
+                Console.WriteLine("Press enter to return to main menu");
+                Console.ReadKey();
+                Console.Clear();
+                break;
             }
             else if (userInput != CODE && numberOfAttempts > 0)
             {
-                Console.Clear();
                 numberOfAttempts = numberOfAttempts - 1;
+                
+                Console.Clear();
                 Console.WriteLine($"{userInput} is incorrect. {numberOfAttempts} attempts remaining. Please try again");
             }
         }
         else
         {
             Console.Clear();
-            Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.");
-            Environment.Exit(0);
+            Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
+            Console.WriteLine("Press enter to return to main menu");
+            Console.ReadKey();
+            Console.Clear();
+            break;
+            
         }
     }
     while (door == "locked");
+
+    Menu();
 }
-
-
-
-
 
 void Menu()
 {
@@ -135,7 +158,7 @@ void Menu()
     Console.WriteLine("4). Keypad Do-While Loop");
     Console.WriteLine("5). Exit\n");
 
-    Console.Write("Choice: ");
+    Console.Write("Please enter a number: ");
 
     int menuChoice = int.Parse(Console.ReadLine());
 
@@ -160,6 +183,11 @@ void Menu()
         case 5:
             Console.Clear();
             Console.WriteLine("Goodbye!");
+            break;
+        default:
+            Console.Clear();
+            Console.WriteLine("Invalid choice. Please try again.\n");
+            Menu();
             break;
     }
 }
