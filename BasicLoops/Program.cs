@@ -10,7 +10,8 @@
     while (userContinue != "n");
 
     Console.Clear();
-    Menu();
+    Menu(); 
+
 }
 
 void ForLoops()
@@ -35,22 +36,32 @@ void ForLoops()
             Console.Write($"{i} ");
         }
 
-        Console.WriteLine("\n\nWould you like to play again [y/n]?");
-        string playAgain = Console.ReadLine().ToLower().Trim();
-        
-        if(playAgain == "y")
+        string playAgain = string.Empty;
+        do
         {
-            Console.Clear();
-            continue;
-        }
-        else
-        {
-            Console.Clear();
-            // Console.WriteLine("Goodbye!");
-            loop = 0;
-            Menu();
-        }
+            Console.WriteLine("\n\nWould you like to play again [y/n]?");
+            playAgain = Console.ReadLine().ToLower().Trim();
+            
+            if(playAgain == "y")
+            {
+                Console.Clear();
+                break;
+            }
+            else if (playAgain == "n")
+            {
+                Console.Clear();
+                // Console.WriteLine("Goodbye!");
+                loop = 0;
+                break;
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine($"'{playAgain}' is an invalid entry. Please enter 'y' or 'n'");
+            }
+        } while (playAgain != "y" || playAgain != "n");
     }
+    Menu(); 
 }
 
 void KeypadWhileLoop()
@@ -96,7 +107,8 @@ void KeypadWhileLoop()
         }
     }
 
-    Menu();
+    Menu(); 
+
 }
 
 void KeypadDoWhileLoop()
@@ -143,8 +155,7 @@ void KeypadDoWhileLoop()
         }
     }
     while (door == "locked");
-
-    Menu();
+    Menu(); 
 }
 
 void Menu()
@@ -189,7 +200,7 @@ void Menu()
             Console.WriteLine("Invalid choice. Please try again.\n");
             Menu();
             break;
-    }
+    } 
 }
 
 Menu();
