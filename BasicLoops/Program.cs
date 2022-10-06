@@ -3,15 +3,19 @@
     string userContinue = string.Empty;
     do
     {
-        Console.WriteLine("Hello, World");
+        Console.WriteLine("Hello, World!");
         Console.WriteLine("Would you like to play again [y/n]?");
         userContinue = Console.ReadLine().ToLower().Trim();
     }
     while (userContinue != "n");
 
     Console.Clear();
-    Menu(); 
+    Console.WriteLine("Goodbye!\n");
+    Console.WriteLine("Press enter to return to the main menu");
+    Console.ReadKey();
+    Console.Clear();
 
+    Menu(); 
 }
 
 void ForLoops()
@@ -50,7 +54,11 @@ void ForLoops()
             else if (playAgain == "n")
             {
                 Console.Clear();
-                // Console.WriteLine("Goodbye!");
+                Console.WriteLine("Goodbye!\n");
+                Console.WriteLine("Press enter to return to the main menu");
+                Console.ReadKey();
+                Console.Clear();
+
                 loop = 0;
                 break;
             }
@@ -90,7 +98,7 @@ void KeypadWhileLoop()
             }
             else if (userInput != CODE && numberOfAttempts > 0)
             {
-                numberOfAttempts = numberOfAttempts - 1;
+                numberOfAttempts--;
 
                 Console.Clear();
                 Console.WriteLine($"{userInput} is incorrect. {numberOfAttempts} attempts remaining. Please try again");
@@ -137,7 +145,7 @@ void KeypadDoWhileLoop()
             }
             else if (userInput != CODE && numberOfAttempts > 0)
             {
-                numberOfAttempts = numberOfAttempts - 1;
+                numberOfAttempts--;
                 
                 Console.Clear();
                 Console.WriteLine($"{userInput} is incorrect. {numberOfAttempts} attempts remaining. Please try again");
@@ -160,7 +168,9 @@ void KeypadDoWhileLoop()
 
 void Menu()
 {
-    Console.WriteLine("-Basic Loops Lab-\n");
+    bool isValidInput;
+    int menuChoice;
+
     Console.WriteLine("Which loop would you like to run? \n");
 
     Console.WriteLine("1). Do-While Hello World Loop");
@@ -171,9 +181,48 @@ void Menu()
 
     Console.Write("Please enter a number: ");
 
-    int menuChoice = int.Parse(Console.ReadLine());
+    //int menuChoice = int.Parse(Console.ReadLine());
 
-    switch(menuChoice)
+    do
+    {
+        isValidInput = int.TryParse(Console.ReadLine(), out menuChoice);
+        if (isValidInput == false)
+        {
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Invalid input. Please enter a number from the menu below:\n ");
+
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("1). ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Do-While Hello World Loop");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("2). ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("For Loops");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("3). ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Keypad While Loop");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("4). ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Keypad Do-While Loop");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("5). ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Exit\n");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write("Please enter a number: ");
+
+            
+        }
+    } while (isValidInput == false);
+
+    switch (menuChoice)
     {
         case 1:
             Console.Clear();
@@ -197,7 +246,9 @@ void Menu()
             break;
         default:
             Console.Clear();
-            Console.WriteLine("Invalid choice. Please try again.\n");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Option {menuChoice} does not exist. Please select an option from the menu below:\n");
+            Console.ResetColor();
             Menu();
             break;
     } 
