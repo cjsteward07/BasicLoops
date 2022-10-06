@@ -1,0 +1,15 @@
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\bin\Debug\net6.0\testproject2.exe
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\bin\Debug\net6.0\testproject2.deps.json
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\bin\Debug\net6.0\testproject2.runtimeconfig.json
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\bin\Debug\net6.0\testproject2.dll
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\bin\Debug\net6.0\testproject2.pdb
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\obj\Debug\net6.0\testproject2.csproj.AssemblyReference.cache
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\obj\Debug\net6.0\testproject2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\obj\Debug\net6.0\testproject2.AssemblyInfoInputs.cache
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\obj\Debug\net6.0\testproject2.AssemblyInfo.cs
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\obj\Debug\net6.0\testproject2.csproj.CoreCompileInputs.cache
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\obj\Debug\net6.0\testproject2.dll
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\obj\Debug\net6.0\refint\testproject2.dll
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\obj\Debug\net6.0\testproject2.pdb
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\obj\Debug\net6.0\testproject2.genruntimeconfig.cache
+C:\Users\Colin\Documents\git\BasicLoops\testproject2\obj\Debug\net6.0\ref\testproject2.dll

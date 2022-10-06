@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pJKVCEipY8mBKIBoQT7QgTFsu4mKphKYyCNPv7EW0YhvKHc6TnF59YM6pTR0KIeebarFZj3yew6hHqrJnd8CRg==",
+  "dgSpecHash": "9gNs8rju/m1CRRh3dFkXaCE2YyypH44QiBNG0N/CxGxGembZ653Vw5l+ltcDKAq69tdpofiarAOe/3W7jgnzjA==",
   "success": true,
-  "projectFilePath": "/home/colin/Documents/git/practice/BasicLoops/BasicLoops/BasicLoops.csproj",
+  "projectFilePath": "C:\\Users\\Colin\\Documents\\git\\BasicLoops\\BasicLoops\\BasicLoops.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

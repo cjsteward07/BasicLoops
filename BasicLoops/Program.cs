@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.InteropServices;
+
 void DoWhileLoop()
 {
     string userContinue = string.Empty;
@@ -120,111 +122,149 @@ void KeypadWhileLoop()
 
 }
 
-// void KeypadDoWhileLoop()
-// {
-//     string door = "locked";
-//     const int CODE = 13579;
-//     int numberOfAttempts = 5;
-
-//     do
-//     {
-//         if (numberOfAttempts > 0)
-//         {
-//             Console.WriteLine("Please enter the combination: ");
-//             int userInput = int.Parse(Console.ReadLine());
-
-//             if (userInput == CODE)
-//             {
-//                 door = "unlocked";
-
-//                 Console.Clear();
-//                 Console.WriteLine($"Welcome. {userInput} is CORRECT!\n");
-//                 Console.WriteLine("Press enter to return to main menu");
-//                 Console.ReadKey();
-//                 Console.Clear();
-//                 break;
-//             }
-//             else if (userInput != CODE && numberOfAttempts > 0)
-//             {
-//                 numberOfAttempts--;
-                
-//                 Console.Clear();
-//                 Console.WriteLine($"{userInput} is incorrect. {numberOfAttempts} attempts remaining. Please try again");
-//             }
-//         }
-//         else
-//         {
-//             Console.Clear();
-//             Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
-//             Console.WriteLine("Press enter to return to main menu");
-//             Console.ReadKey();
-//             Console.Clear();
-//             break;
-//         }
-//     }
-//     while (door == "locked");
-//     Menu(); 
-// }
-
-
-bool KeypadDoWhileLoop()
+void KeypadDoWhileLoop()
 {
-    bool doorLocked = true;
+    string door = "locked";
     const int CODE = 13579;
     int numberOfAttempts = 5;
-    int userInput;
 
     do
     {
-        // if (numberOfAttempts > 0)
-        // {
+        if (numberOfAttempts > 0)
+        {
             Console.WriteLine("Please enter the combination: ");
-            userInput = int.Parse(Console.ReadLine());
+            int userInput = int.Parse(Console.ReadLine());
 
             if (userInput == CODE)
             {
-                doorLocked = false;
+                door = "unlocked";
 
                 Console.Clear();
                 Console.WriteLine($"Welcome. {userInput} is CORRECT!\n");
                 Console.WriteLine("Press enter to return to main menu");
                 Console.ReadKey();
                 Console.Clear();
-                return doorLocked;
+                break;
             }
-            else if (userInput != CODE)
+            else if (userInput != CODE && numberOfAttempts > 0)
             {
                 numberOfAttempts--;
-                
+
                 Console.Clear();
                 Console.WriteLine($"{userInput} is incorrect. {numberOfAttempts} attempts remaining. Please try again");
-                continue;
             }
-    
-
-        // }
-        // else
-        // {
-        //     Console.Clear();
-        //     Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
-        //     Console.WriteLine("Press enter to return to main menu");
-        //     Console.ReadKey();
-        //     Console.Clear();
-        //     break;
-        // }
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
+            Console.WriteLine("Press enter to return to main menu");
+            Console.ReadKey();
+            Console.Clear();
+            break;
+        }
     }
-    while (userInput != CODE && numberOfAttempts > 0);
+    while (door == "locked");
+    Menu();
+}
 
-                Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
-                Console.WriteLine("Press enter to return to main menu");
-                Console.ReadKey();
-                return doorLocked;
-    Menu(); 
+
+bool StretchKeypadReturnMethod()
+{
+    bool doorLocked = true;
+    const int CODE = 13579;
+    int numberOfAttempts = 5;
+    int userInput = 0;
+
+
+    while (numberOfAttempts > 0 && doorLocked == true && userInput != CODE)
+    {
+        Console.WriteLine("Please enter the combination: ");
+        userInput = int.Parse(Console.ReadLine());
+
+        if (userInput == CODE)
+        {
+            doorLocked = false;
+            Console.WriteLine($"Welcome. {userInput} is CORRECT!\n");
+            return doorLocked;
+        }
+
+        numberOfAttempts--;
+
+        
+        //Console.WriteLine($"{userInput} {numberOfAttempts} {doorLocked}");
+
+
+
+        Console.WriteLine($"{userInput} is incorrect. {numberOfAttempts} attempts remaining. Please try again");
+
+
+
+
+
+
+
+
+    }
+
+    Console.Clear();
+    Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
+    return doorLocked;
+
+
+
 }
 
 
 
 
+    //do
+    //{
+    //    // if (numberOfAttempts > 0)
+    //    // {
+    //        Console.WriteLine("Please enter the combination: ");
+    //        userInput = int.Parse(Console.ReadLine());
+
+    //        if (userInput == CODE)
+    //        {
+    //            doorLocked = false;
+
+    //            Console.Clear();
+    //            Console.WriteLine($"Welcome. {userInput} is CORRECT!\n");
+    //            Console.WriteLine("Press enter to return to main menu");
+    //            Console.ReadKey();
+    //            Console.Clear();
+    //            return doorLocked;
+    //        }
+    //        else if (userInput != CODE)
+    //        {
+    //            numberOfAttempts--;
+
+    //            Console.Clear();
+    //            Console.WriteLine($"{userInput} is incorrect. {numberOfAttempts} attempts remaining. Please try again");
+    //            continue;
+    //        }
+
+
+    //    // }
+    //    // else
+    //    // {
+    //    //     Console.Clear();
+    //    //     Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
+    //    //     Console.WriteLine("Press enter to return to main menu");
+    //    //     Console.ReadKey();
+    //    //     Console.Clear();
+    //    //     break;
+    //    // }
+    //}
+    //while (userInput != CODE && numberOfAttempts > 0);
+
+    //            Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
+    //            Console.WriteLine("Press enter to return to main menu");
+    //            Console.ReadKey();
+    //            return doorLocked;
+//    Menu(); 
+//}
 
 
 
@@ -238,43 +278,68 @@ bool KeypadDoWhileLoop()
 
 
 
-void MenuOptions()
+
+
+
+
+void MenuOptions( [Optional] bool doorLocked)
 {
-    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.WriteLine(doorLocked);
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine("Which loop would you like to run?");
 
     Console.Write("1). ");
     Console.ForegroundColor = ConsoleColor.Blue;
     Console.WriteLine("Do-While Hello World Loop");
-    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.Write("2). ");
     Console.ForegroundColor = ConsoleColor.Blue;
     Console.WriteLine("For Loops");
-    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.Write("3). ");
     Console.ForegroundColor = ConsoleColor.Blue;
     Console.WriteLine("Keypad While Loop");
-    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.Write("4). ");
     Console.ForegroundColor = ConsoleColor.Blue;
     Console.WriteLine("Keypad Do-While Loop");
-    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.Write("5). ");
+    Console.ForegroundColor = ConsoleColor.Blue;
+    if (doorLocked == true)
+    {
+        Console.Write("Stretch Keypad Return Method: ");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Door Locked");
+    }
+    else if (doorLocked == false)
+    {
+        Console.Write("Stretch Keypad Return Method: ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("Door Unlocked!");
+    }
+    else
+    {
+        Console.WriteLine("Stretch Keypad Return Method");
+    }
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.Write("6). ");
     Console.ForegroundColor = ConsoleColor.Blue;
     Console.WriteLine("Exit");
     Console.ResetColor();
 
-    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.Write("Please enter a number: ");
     Console.ResetColor();
 }
 
-void Menu()
+void Menu(bool doorLocked = true)
 {
     bool isValidInput;
     int menuChoice;
+    Console.WriteLine(doorLocked);
 
-    MenuOptions();
+    MenuOptions(doorLocked);
 
     do
     {
@@ -284,7 +349,7 @@ void Menu()
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Invalid input. Please enter a NUMBER from the menu below:\n");
-            MenuOptions();
+            MenuOptions(doorLocked);
         }
     } while (isValidInput == false);
 
@@ -307,6 +372,15 @@ void Menu()
             KeypadDoWhileLoop();
             break;
         case 5:
+            Console.Clear();
+            doorLocked = StretchKeypadReturnMethod();
+            Console.WriteLine(doorLocked);
+            Console.WriteLine("Press enter to return to main menu");
+            Console.ReadKey();
+            Console.Clear();
+            Menu(doorLocked);
+            break;
+        case 6:
             Console.Clear();
             Console.WriteLine("Goodbye!");
             break;
