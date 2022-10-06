@@ -1,0 +1,15 @@
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\bin\Debug\net6.0\KeypadProject.exe
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\bin\Debug\net6.0\KeypadProject.deps.json
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\bin\Debug\net6.0\KeypadProject.runtimeconfig.json
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\bin\Debug\net6.0\KeypadProject.dll
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\bin\Debug\net6.0\KeypadProject.pdb
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\obj\Debug\net6.0\KeypadProject.csproj.AssemblyReference.cache
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\obj\Debug\net6.0\KeypadProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\obj\Debug\net6.0\KeypadProject.AssemblyInfoInputs.cache
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\obj\Debug\net6.0\KeypadProject.AssemblyInfo.cs
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\obj\Debug\net6.0\KeypadProject.csproj.CoreCompileInputs.cache
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\obj\Debug\net6.0\KeypadProject.dll
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\obj\Debug\net6.0\refint\KeypadProject.dll
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\obj\Debug\net6.0\KeypadProject.pdb
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\obj\Debug\net6.0\KeypadProject.genruntimeconfig.cache
+C:\Users\Colin\Documents\git\BasicLoops\KeypadProject\obj\Debug\net6.0\ref\KeypadProject.dll

@@ -206,6 +206,7 @@ bool StretchKeypadReturnMethod()
         if (userInput == CODE)
         {
             doorLocked = false;
+            Console.Clear();
             Console.WriteLine($"Welcome. {userInput} is CORRECT!\n");
             return doorLocked;
         }
