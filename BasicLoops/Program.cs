@@ -1,4 +1,5 @@
-﻿void DoWhileLoop()
+﻿using System;
+void DoWhileLoop()
 {
     string userContinue = string.Empty;
     do
@@ -119,51 +120,153 @@ void KeypadWhileLoop()
 
 }
 
-void KeypadDoWhileLoop()
+// void KeypadDoWhileLoop()
+// {
+//     string door = "locked";
+//     const int CODE = 13579;
+//     int numberOfAttempts = 5;
+
+//     do
+//     {
+//         if (numberOfAttempts > 0)
+//         {
+//             Console.WriteLine("Please enter the combination: ");
+//             int userInput = int.Parse(Console.ReadLine());
+
+//             if (userInput == CODE)
+//             {
+//                 door = "unlocked";
+
+//                 Console.Clear();
+//                 Console.WriteLine($"Welcome. {userInput} is CORRECT!\n");
+//                 Console.WriteLine("Press enter to return to main menu");
+//                 Console.ReadKey();
+//                 Console.Clear();
+//                 break;
+//             }
+//             else if (userInput != CODE && numberOfAttempts > 0)
+//             {
+//                 numberOfAttempts--;
+                
+//                 Console.Clear();
+//                 Console.WriteLine($"{userInput} is incorrect. {numberOfAttempts} attempts remaining. Please try again");
+//             }
+//         }
+//         else
+//         {
+//             Console.Clear();
+//             Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
+//             Console.WriteLine("Press enter to return to main menu");
+//             Console.ReadKey();
+//             Console.Clear();
+//             break;
+//         }
+//     }
+//     while (door == "locked");
+//     Menu(); 
+// }
+
+
+bool KeypadDoWhileLoop()
 {
-    string door = "locked";
+    bool doorLocked = true;
     const int CODE = 13579;
     int numberOfAttempts = 5;
+    int userInput;
 
     do
     {
-        if (numberOfAttempts > 0)
-        {
+        // if (numberOfAttempts > 0)
+        // {
             Console.WriteLine("Please enter the combination: ");
-            int userInput = int.Parse(Console.ReadLine());
+            userInput = int.Parse(Console.ReadLine());
 
             if (userInput == CODE)
             {
-                door = "unlocked";
+                doorLocked = false;
 
                 Console.Clear();
                 Console.WriteLine($"Welcome. {userInput} is CORRECT!\n");
                 Console.WriteLine("Press enter to return to main menu");
                 Console.ReadKey();
                 Console.Clear();
-                break;
+                return doorLocked;
             }
-            else if (userInput != CODE && numberOfAttempts > 0)
+            else if (userInput != CODE)
             {
                 numberOfAttempts--;
                 
                 Console.Clear();
                 Console.WriteLine($"{userInput} is incorrect. {numberOfAttempts} attempts remaining. Please try again");
+                continue;
             }
-        }
-        else
-        {
-            Console.Clear();
-            Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
-            Console.WriteLine("Press enter to return to main menu");
-            Console.ReadKey();
-            Console.Clear();
-            break;
-            
-        }
+    
+
+        // }
+        // else
+        // {
+        //     Console.Clear();
+        //     Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
+        //     Console.WriteLine("Press enter to return to main menu");
+        //     Console.ReadKey();
+        //     Console.Clear();
+        //     break;
+        // }
     }
-    while (door == "locked");
+    while (userInput != CODE && numberOfAttempts > 0);
+
+                Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
+                Console.WriteLine("Press enter to return to main menu");
+                Console.ReadKey();
+                return doorLocked;
     Menu(); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void MenuOptions()
+{
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.WriteLine("Which loop would you like to run?");
+
+    Console.Write("1). ");
+    Console.ForegroundColor = ConsoleColor.Blue;
+    Console.WriteLine("Do-While Hello World Loop");
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.Write("2). ");
+    Console.ForegroundColor = ConsoleColor.Blue;
+    Console.WriteLine("For Loops");
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.Write("3). ");
+    Console.ForegroundColor = ConsoleColor.Blue;
+    Console.WriteLine("Keypad While Loop");
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.Write("4). ");
+    Console.ForegroundColor = ConsoleColor.Blue;
+    Console.WriteLine("Keypad Do-While Loop");
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.Write("5). ");
+    Console.ForegroundColor = ConsoleColor.Blue;
+    Console.WriteLine("Exit");
+    Console.ResetColor();
+
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.Write("Please enter a number: ");
+    Console.ResetColor();
 }
 
 void Menu()
@@ -171,17 +274,7 @@ void Menu()
     bool isValidInput;
     int menuChoice;
 
-    Console.WriteLine("Which loop would you like to run? \n");
-
-    Console.WriteLine("1). Do-While Hello World Loop");
-    Console.WriteLine("2). For Loops");
-    Console.WriteLine("3). Keypad While Loop");
-    Console.WriteLine("4). Keypad Do-While Loop");
-    Console.WriteLine("5). Exit\n");
-
-    Console.Write("Please enter a number: ");
-
-    //int menuChoice = int.Parse(Console.ReadLine());
+    MenuOptions();
 
     do
     {
@@ -189,36 +282,9 @@ void Menu()
         if (isValidInput == false)
         {
             Console.Clear();
-
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Invalid input. Please enter a number from the menu below:\n ");
-
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Write("1). ");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Do-While Hello World Loop");
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Write("2). ");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("For Loops");
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Write("3). ");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Keypad While Loop");
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Write("4). ");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Keypad Do-While Loop");
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.Write("5). ");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Exit\n");
-            Console.ResetColor();
-
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.Write("Please enter a number: ");
-
-            
+            Console.WriteLine("Invalid input. Please enter a NUMBER from the menu below:\n");
+            MenuOptions();
         }
     } while (isValidInput == false);
 
