@@ -209,11 +209,9 @@ bool StretchKeypadReturnMethod()
             Console.WriteLine($"Welcome. {userInput} is CORRECT!\n");
             return doorLocked;
         }
-
         numberOfAttempts--;
         Console.Clear();
         Console.WriteLine($"{userInput} is incorrect. {numberOfAttempts} attempts remaining. Please try again");
-
     }
     Console.Clear();
     Console.WriteLine("WARNING! Too many incorrect attempts. Please try again later.\n");
